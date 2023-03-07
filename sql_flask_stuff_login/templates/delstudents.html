@@ -1,0 +1,38 @@
+{% extends 'baseh.html' %}
+
+{% block content %}
+<html>
+    <body>
+    <div class="alert alert-dark" role="alert">
+  Please click on the name of the user you want to delete!
+</div>
+        <table class="table table-striped table-hover" border = 2 >
+            <thead>
+                <td>Name</td>
+                <td>Address</td>
+                <td>City</td>
+                <td></td>
+            </thead>
+
+            {% for row in rows %}
+            <tr>
+                <form action="{{ url_for( 'studentdeleted' ) }}" method="POST">
+                    <td><button style="color: black; background-color: transparent; border-color: transparent ;" type="submit" , name= "name" value="{{ row['name']}}" >{{row["name"]}}</button></td>
+                    <td><button style="color: black; background-color: transparent; border-color: transparent;" type="submit" , name= "name" value="{{ row['name']}}" >{{row["addr"]}}</button></td>
+                    <td><button style="color: black; background-color: transparent; border-color: transparent;" type="submit" , name= "name" value="{{ row['name']}}" >{{row["city"]}}</button></td>
+
+
+
+
+
+                <td>
+                </form>
+
+
+
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
+{% endblock %}

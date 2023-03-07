@@ -1,0 +1,27 @@
+{% extends 'baseh.html' %}
+
+
+{% block content %}
+
+<html>
+    <body>
+
+        <table  class="table table-striped" border = 2 >
+            <thead>
+                <td>Name</td>
+                <td>Address</td>
+                <td>City</td>
+            </thead>
+
+            {% for row in rows %}
+            <tr>
+                <td>{{row["name"]}}</td>
+                <td>{{row["addr"]}}</td>
+                <td> {{ row["city"]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
+
+{% endblock %}
